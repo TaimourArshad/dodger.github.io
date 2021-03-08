@@ -1,0 +1,59 @@
+<html>
+
+<head>
+	<title>Game</title>
+	<meta charset="UTF-8" />
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<style>
+		body {
+			background-image: url('background.jpg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		input[type=text]{
+			border: 2px solid black;
+		}
+		#gameName{
+			text-align: center;
+		}
+		#gameScreen {
+			display: block;
+			margin: 0 auto;
+			border: 1px solid white;
+			background-color: black;
+		}
+
+		#score {
+			position: fixed;
+			left: 370px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1 id="gameName" class="text-2xl font-mono text-white">Dodger!</h1>
+
+	<div id="score" class="fixed text-white ml-2 mt-2 select-none"><span>Score: </span><span id="addScore">0</span></div>
+
+	<div id="container" class="fixed inset-0 flex items-center justify-center">
+		<div class="bg-white max-w-md w-full p-6 text-center">
+			<h1 class="text-4xl font-bold leading-none" id="finalScore">0</h1>
+			<p class="text-sm text-gray-700">Points</p>
+			<form method="post">
+				<p>Enter Username: </p>
+                <input type="text" name="username" id="username" onfocus="this.value=''" required>
+			</form>
+			<div>
+				<button class="bg-blue-500 text-white w-full py-3 rounded-full text-sm" id="startGame">Start Game</button>
+			</div>
+			<p class="text-sm text-gray-700">Dodge falling rocks, use arrow keys to move</p>
+		</div>
+	</div>
+
+	<canvas id="gameScreen"></canvas>
+  	<script src="./canvas.js"></script>
+</body>
+
+</html>
